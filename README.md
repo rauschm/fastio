@@ -1,7 +1,7 @@
 # fastio
 
 Erstaunlicherweise ist die Performance der C/C++ Standard-Ein- und Ausgabe-Funktionen `scanf`/`printf` und der Operatoren `<<`/`>>` nicht allzu hoch.
-Ein simples Lesen und Schreiben einer CSV-Datei mit 20 Mio Zeilen, jede Zeile hat 4 Spalten mit zusammen ca. 41 Zeichen, dauert mit dem folgenden Programm ca. 65 Sekunden.
+Ein simples Lesen und Schreiben einer CSV-Datei mit 20 Mio Zeilen, jede Zeile hat 4 Spalten mit zusammen ca. 41 Zeichen, dauert mit dem folgenden Programm ca. 50 Sekunden.
 ```c
 /* slowcopy.c */
 #include "stdio.h"
@@ -16,7 +16,7 @@ void main(void) {
   }
 }
 ```
-Diese Zahl alleine sagt noch nicht viel aus. Könnte doch der Computer insgesamt langsam sein. Allerdings wird von dem folgenden Programm, das die **fastio**-Funktionen verwendet, die gleiche Arbeit auf demselben Computer in ca. 4,3 Sekunden verrichtet, was einer Steigerung der Verarbeitungsgeschwindigkeit um **1400%** entspricht.
+Diese Zahl alleine sagt noch nicht viel aus. Könnte doch der Computer insgesamt langsam sein. Allerdings wird von dem folgenden Programm, das die **fastio**-Funktionen verwendet, die gleiche Arbeit auf demselben Computer in ca. 6,5 Sekunden verrichtet, was einer Steigerung der Verarbeitungsgeschwindigkeit um **660%** entspricht.
 ```c
 /* fastcopy.c */
 #include "fastio.h"
