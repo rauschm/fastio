@@ -2,6 +2,9 @@
 
 Erstaunlicherweise ist die Performance der C/C++ Standard-Ein- und Ausgabe-Funktionen `scanf`/`printf` und der Operatoren `<<`/`>>` nicht allzu hoch.
 Ein simples Lesen und Schreiben einer CSV-Datei mit 20 Mio Zeilen, jede Zeile hat 4 Spalten mit zusammen ca. 41 Zeichen, dauert mit dem folgenden Programm ca. 67 Sekunden.
+
+![](schnecke.png)
+
 ```c
 /* slowcopy.c */
 #include "stdio.h"
