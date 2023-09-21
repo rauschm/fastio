@@ -66,6 +66,7 @@
 #else
 #define MemoryMapTwice(LOC,SIZ,RET1,RET2) \
      (LOC = (char*) mmap(0, SIZ * 2, PROT_NONE, MAP_ANONYMOUS | MAP_PRIVATE, -1, 0)) == MAP_FAILED \
+  || munmap(LOC, SIZ * 2) == -1 \
   || (fd = shm_open("**fastio**", O_RDWR | O_CREAT | O_EXCL, S_IRUSR | S_IWUSR)) == -1 \
   || shm_unlink("**fastio**") == -1 \
   || ftruncate(fd, SIZ * 2) == -1 \
